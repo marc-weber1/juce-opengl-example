@@ -230,6 +230,12 @@ JUCE_SOURCE_DIR:STATIC=E:/Users/facade/Documents/Github/JUCE
 // will be installed
 JUCE_TOOL_INSTALL_DIR:STRING=bin/JUCE-6.0.5
 
+//Value Computed by CMake
+glm_BINARY_DIR:STATIC=E:/Users/facade/Documents/Github/JUCEOpenGLExample/build/external/glm
+
+//Value Computed by CMake
+glm_SOURCE_DIR:STATIC=E:/Users/facade/Documents/Github/JUCEOpenGLExample/external/glm
+
 
 ########################
 # INTERNAL cache entries
@@ -313,7 +319,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RC_COMPILER
