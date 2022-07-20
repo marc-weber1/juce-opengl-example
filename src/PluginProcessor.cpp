@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-FacadeWaveshaperAudioProcessor::FacadeWaveshaperAudioProcessor()
+OpenGLExampleAudioProcessor::OpenGLExampleAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
@@ -24,17 +24,17 @@ FacadeWaveshaperAudioProcessor::FacadeWaveshaperAudioProcessor()
 {
 }
 
-FacadeWaveshaperAudioProcessor::~FacadeWaveshaperAudioProcessor()
+OpenGLExampleAudioProcessor::~OpenGLExampleAudioProcessor()
 {
 }
 
 //==============================================================================
-const juce::String FacadeWaveshaperAudioProcessor::getName() const
+const juce::String OpenGLExampleAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool FacadeWaveshaperAudioProcessor::acceptsMidi() const
+bool OpenGLExampleAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -43,7 +43,7 @@ bool FacadeWaveshaperAudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool FacadeWaveshaperAudioProcessor::producesMidi() const
+bool OpenGLExampleAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -52,7 +52,7 @@ bool FacadeWaveshaperAudioProcessor::producesMidi() const
    #endif
 }
 
-bool FacadeWaveshaperAudioProcessor::isMidiEffect() const
+bool OpenGLExampleAudioProcessor::isMidiEffect() const
 {
    #if JucePlugin_IsMidiEffect
     return true;
@@ -61,50 +61,50 @@ bool FacadeWaveshaperAudioProcessor::isMidiEffect() const
    #endif
 }
 
-double FacadeWaveshaperAudioProcessor::getTailLengthSeconds() const
+double OpenGLExampleAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int FacadeWaveshaperAudioProcessor::getNumPrograms()
+int OpenGLExampleAudioProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
                 // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int FacadeWaveshaperAudioProcessor::getCurrentProgram()
+int OpenGLExampleAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void FacadeWaveshaperAudioProcessor::setCurrentProgram (int index)
+void OpenGLExampleAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const juce::String FacadeWaveshaperAudioProcessor::getProgramName (int index)
+const juce::String OpenGLExampleAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void FacadeWaveshaperAudioProcessor::changeProgramName (int index, const juce::String& newName)
+void OpenGLExampleAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
 }
 
 //==============================================================================
-void FacadeWaveshaperAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void OpenGLExampleAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 }
 
-void FacadeWaveshaperAudioProcessor::releaseResources()
+void OpenGLExampleAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool FacadeWaveshaperAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool OpenGLExampleAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     juce::ignoreUnused (layouts);
@@ -127,7 +127,7 @@ bool FacadeWaveshaperAudioProcessor::isBusesLayoutSupported (const BusesLayout& 
 }
 #endif
 
-void FacadeWaveshaperAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+void OpenGLExampleAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
@@ -157,25 +157,25 @@ void FacadeWaveshaperAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
 }
 
 //==============================================================================
-bool FacadeWaveshaperAudioProcessor::hasEditor() const
+bool OpenGLExampleAudioProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-juce::AudioProcessorEditor* FacadeWaveshaperAudioProcessor::createEditor()
+juce::AudioProcessorEditor* OpenGLExampleAudioProcessor::createEditor()
 {
-    return new FacadeWaveshaperAudioProcessorEditor ( *this );
+    return new OpenGLExampleAudioProcessorEditor ( *this );
 }
 
 //==============================================================================
-void FacadeWaveshaperAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
+void OpenGLExampleAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
 }
 
-void FacadeWaveshaperAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void OpenGLExampleAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
@@ -185,5 +185,5 @@ void FacadeWaveshaperAudioProcessor::setStateInformation (const void* data, int 
 // This creates new instances of the plugin..
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new FacadeWaveshaperAudioProcessor();
+    return new OpenGLExampleAudioProcessor();
 }

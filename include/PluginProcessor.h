@@ -13,12 +13,12 @@
 //==============================================================================
 /**
 */
-class FacadeWaveshaperAudioProcessor  : public juce::AudioProcessor
+class OpenGLExampleAudioProcessor  : public juce::AudioProcessor
 {
 public:
     //==============================================================================
-    FacadeWaveshaperAudioProcessor();
-    ~FacadeWaveshaperAudioProcessor() override;
+    OpenGLExampleAudioProcessor();
+    ~OpenGLExampleAudioProcessor() override;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -55,5 +55,5 @@ public:
 
 private:
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FacadeWaveshaperAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OpenGLExampleAudioProcessor)
 };

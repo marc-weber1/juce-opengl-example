@@ -10,7 +10,7 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-FacadeWaveshaperAudioProcessorEditor::FacadeWaveshaperAudioProcessorEditor (FacadeWaveshaperAudioProcessor& p)
+OpenGLExampleAudioProcessorEditor::OpenGLExampleAudioProcessorEditor (OpenGLExampleAudioProcessor& p)
     : OpenGLEditor (&p), audioProcessor (p)
 {
     addAndMakeVisible(comp);
@@ -19,18 +19,18 @@ FacadeWaveshaperAudioProcessorEditor::FacadeWaveshaperAudioProcessorEditor (Faca
     setSize (500, 500);
 }
 
-FacadeWaveshaperAudioProcessorEditor::~FacadeWaveshaperAudioProcessorEditor()
+OpenGLExampleAudioProcessorEditor::~OpenGLExampleAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void FacadeWaveshaperAudioProcessorEditor::paint (juce::Graphics& g)
+void OpenGLExampleAudioProcessorEditor::paint (juce::Graphics& g)
 {
     juce::AudioProcessorEditor::paint(g);
     
 }
 
-void FacadeWaveshaperAudioProcessorEditor::resized()
+void OpenGLExampleAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..

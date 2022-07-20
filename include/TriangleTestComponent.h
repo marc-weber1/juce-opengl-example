@@ -7,8 +7,12 @@
 
 #include <vector>
 
+
+using namespace ::juce::gl;
+
 class TriangleTestComponent : public OpenGLComponent
 {
+
 public:
 
     bool initialize() override{

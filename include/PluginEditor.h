@@ -18,11 +18,11 @@
 //==============================================================================
 /**
 */
-class FacadeWaveshaperAudioProcessorEditor  : public OpenGLEditor
+class OpenGLExampleAudioProcessorEditor  : public OpenGLEditor
 {
 public:
-    FacadeWaveshaperAudioProcessorEditor (FacadeWaveshaperAudioProcessor&);
-    ~FacadeWaveshaperAudioProcessorEditor() override;
+    OpenGLExampleAudioProcessorEditor (OpenGLExampleAudioProcessor&);
+    ~OpenGLExampleAudioProcessorEditor() override;
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -31,9 +31,9 @@ public:
 private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
-    FacadeWaveshaperAudioProcessor& audioProcessor;
+    OpenGLExampleAudioProcessor& audioProcessor;
 
     TriangleTestComponent comp;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FacadeWaveshaperAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OpenGLExampleAudioProcessorEditor)
 };
